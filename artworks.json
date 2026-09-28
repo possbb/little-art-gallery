@@ -1,0 +1,18 @@
+[
+  {
+    "id": "dog",
+    "title": "长耳朵小狗",
+    "date": "",
+    "notes": "一只长耳朵、翘尾巴的小狗。",
+    "original": "./art/dog-original.png",
+    "clean": "./art/dog-clean.png"
+  },
+  {
+    "id": "mermaid",
+    "title": "花朵美人鱼",
+    "date": "",
+    "notes": "花朵、皇冠，还有一条弯弯的鱼尾巴。",
+    "original": "./art/mermaid-original.png",
+    "clean": "./art/mermaid-clean-v2.png"
+  }
+]

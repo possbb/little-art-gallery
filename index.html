@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN" data-mode="published">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>小娃画作 · 小小画廊</title><meta name="description" content="收藏小娃的每一幅画，留住天马行空的小世界。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232d4ce3'/%3E%3Cpath d='M9 23l3-8 9-9 5 5-9 9z' fill='%23ffdc67'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header><a class="brand" href="./" aria-label="小娃画作首页"><span class="brand-mark">小</span><span>小娃画作<small>LITTLE ART, BIG WORLD</small></span></a><span class="local-label">我的家庭画廊</span><button class="primary" id="add" hidden>＋ 收藏新作品</button></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">THE LITTLE GALLERY / 小小画廊</p><h1>小小的笔，<br>大大的<span>想象力。</span></h1><p class="intro-note">把天马行空，认真收藏。</p></div><div class="collection-note"><span>每一笔，<br>都只有这一次。</span><small>给小画家的成长纪念</small></div></section>
+    <section aria-labelledby="gallery-title"><div class="gallery-head"><h2 id="gallery-title">全部作品 <span id="count">0</span></h2><div class="view-switch" aria-label="展示版本"><button data-view="clean" class="active" aria-pressed="true">电子版</button><button data-view="original" aria-pressed="false">原始画作</button></div></div><p id="status" role="status">正在打开画廊…</p><div id="gallery" class="gallery"></div></section>
+    <footer><span>小娃画作 · 每一幅都值得留下</span><span>小画家的线上作品集</span></footer>
+  </main>
+  <dialog id="detail"><div class="dialog-head"><span>作品档案</span><button class="icon" data-close="detail" aria-label="关闭作品">×</button></div><div class="detail-body"><div class="detail-image"><img id="detail-img" alt=""><div class="view-switch"><button id="show-clean">电子版</button><button id="show-original">原图</button></div></div><div class="detail-copy"><p class="eyebrow">A LITTLE MASTERPIECE</p><h2 id="detail-title"></h2><p id="detail-date"></p><p id="detail-notes"></p><p id="detail-state" class="hint"></p><div class="detail-actions"><a class="primary" id="download" download>下载当前图片 ↓</a><button id="edit" hidden class="secondary">编辑作品资料</button></div></div></div></dialog>
+  <dialog id="editor"><form id="art-form"><div class="dialog-head"><h2 id="editor-title">收藏新作品</h2><button type="button" class="icon" data-close="editor" aria-label="关闭编辑">×</button></div><div class="form-content"><label>作品名称<input name="title" required maxlength="100" placeholder="给这幅画起个名字"></label><label>创作日期 <span class="optional">选填</span><input name="date" type="date"></label><label>画作小故事 <span class="optional">选填</span><textarea name="notes" maxlength="2000" rows="3" placeholder="小娃画了什么？当时说了什么？"></textarea></label><label id="original-label" class="file-label">原始画作<input name="original" type="file" accept="image/png,image/jpeg,image/webp"><small>PNG、JPG 或 WebP，每张不超过 10 MB</small></label><label class="file-label">干净电子版 <span class="optional">选填</span><input name="clean" type="file" accept="image/png,image/jpeg,image/webp"><small>可以先收藏原图，整理好电子版后再补充。</small></label><p class="hint">添加图片会保存到本地。背景清理需另外处理，不会在上传时自动进行。</p><p id="form-error" role="alert"></p><button class="primary" id="save" type="submit">保存作品</button></div></form></dialog>
+</body></html>

@@ -1,5 +1,29 @@
 [
   {
+    "id": "mermaid-friends",
+    "title": "美人鱼好朋友",
+    "date": "",
+    "notes": "六位美人鱼，六个不一样的小模样。",
+    "original": "./art/mermaid-friends-original.jpg",
+    "clean": "./art/mermaid-friends-clean.png"
+  },
+  {
+    "id": "pink-mermaid",
+    "title": "粉色美人鱼的小世界",
+    "date": "",
+    "notes": "粉色的长发里，藏着花朵和小小的故事。",
+    "original": "./art/pink-mermaid-original.jpg",
+    "clean": "./art/pink-mermaid-clean.png"
+  },
+  {
+    "id": "rainbow-mermaid",
+    "title": "彩虹星星美人鱼",
+    "date": "",
+    "notes": "彩色的笔触，加上星星、花朵和蝴蝶结。",
+    "original": "./art/rainbow-mermaid-original.jpg",
+    "clean": "./art/rainbow-mermaid-clean.png"
+  },
+  {
     "id": "dog",
     "title": "长耳朵小狗",
     "date": "",

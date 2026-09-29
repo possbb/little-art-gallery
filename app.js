@@ -115,9 +115,9 @@ async function load() {
   artworks=[];selected=null;canEdit=false;canDelete=false;$('#add').hidden=true;$('#detail').close();render();
   if(publicBackend){
     $('#status').textContent='正在读取最新作品…';
-    const items=await api(publicBackend+'/api/public/artworks',{credentials:'omit',cache:'no-store'});
+    const items=await api(window.GALLERY_PUBLIC_FEED||publicBackend+'/api/public/artworks',{credentials:'omit',cache:'no-store'});
     if(version!==loadVersion)return;
-    artworks=items.map(item=>({...item,...Object.fromEntries(['original','clean','video'].map(kind=>[kind,item[kind]?new URL(item[kind],publicBackend).href:null]))}));render();return;
+    artworks=items.map(item=>({...item,...Object.fromEntries(['original','clean','video'].map(kind=>[kind,item[kind]?new URL(item[kind],window.GALLERY_PUBLIC_FEED?location.href:publicBackend).href:null]))}));render();return;
   }
   const session=await api('/api/session');if(version!==loadVersion)return;
   const params=new URL(location.href).searchParams;

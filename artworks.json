@@ -1,42 +1,92 @@
 [
   {
+    "id": "9574dfc0-08b3-428b-8647-693f9f24ca03",
+    "title": "长长的小幽灵（白底电子版）",
+    "date": "",
+    "notes": "",
+    "original": "./media/359876fccd9c86b9c9c90849c3ad6deecaa7725a6a4c54513c7dd55cbbaf1137.png",
+    "clean": "./media/bf76c55fd31283ac917ab84c0df79eab8f85f4dff496c7c3c13f0c2106afee7b.png",
+    "video": "./media/83ddf3a09b64d23f1cb09fa1a844d044e3fcffcc284fceb44c04a76ec6d380ab.mp4",
+    "originalRotation": 0
+  },
+  {
+    "id": "2973a2c8-f338-4b4e-848e-22f9394fd7ab",
+    "title": "蓝色小幽灵（白底电子版）",
+    "date": "",
+    "notes": "",
+    "original": "./media/060f8788bd69c2e457e9a7ac659c830e9ace938eea2861788d53130a6860fee1.png",
+    "clean": "./media/e6becbe557b0b6857f5a1c49b4e04e4c64d2334db720a14a8ff759fe0cdab9a3.png",
+    "video": "./media/afa25a0245ec2d534ea50cc0207815cf55924100a8d619c3094f4f301f63d1eb.mp4",
+    "originalRotation": 0
+  },
+  {
+    "id": "lavender-smile",
+    "title": "浅紫色的微笑",
+    "date": "",
+    "notes": "淡紫色和蓝绿色的微笑女孩。",
+    "original": "./media/9ec0d05ba731a7f8a6556ca1f8cd6e2c969c6b95033d6dacf4847a4a5938071d.png",
+    "clean": "./media/55e96643c54c6d382f2e31816ce43f0e886ca06d06f7026953872c1cdf0119de.png",
+    "video": "./media/bab9ea8ceb4e4f020f9cfd89112803a9d597c0bf86d985e8ee169b1ab3d9ea5f.mp4",
+    "originalRotation": 0
+  },
+  {
+    "id": "pink-purple-girl",
+    "title": "粉紫长发女孩",
+    "date": "",
+    "notes": "粉色与紫色的长发，藏着一个微笑。",
+    "original": "./media/315f30191130bfd13457eb43d79590f7db209240c28d09a035c376a03f5a1697.png",
+    "clean": "./media/8cbb00c7a2dc9c0135ffd7d4f6bbdee42b6c7421f66f63abf388bd80f2664209.png",
+    "video": "./media/4c47382d90c6214715df8375efe81b6ada05e7f3cc095b154c56da60f2f7b115.mp4",
+    "originalRotation": 0
+  },
+  {
     "id": "mermaid-friends",
     "title": "美人鱼好朋友",
     "date": "",
     "notes": "六位美人鱼，六个不一样的小模样。",
-    "original": "./art/mermaid-friends-original.jpg",
-    "clean": "./art/mermaid-friends-clean.png"
+    "original": "./media/7b2292c92801f927340ad330dae8e47a964cb1992a3dfcb0c58d268672e44a45.jpg",
+    "clean": "./media/fc946e5f6db4b9417d436d9fb42d1f5e174a130bb29b6cf8af76cfe74210f76a.png",
+    "video": "./media/35c5e7481bf887915d48fc40c77f8afe28ad4f740c78157a4939b2c01d333891.mp4",
+    "originalRotation": 0
   },
   {
     "id": "pink-mermaid",
     "title": "粉色美人鱼的小世界",
     "date": "",
     "notes": "粉色的长发里，藏着花朵和小小的故事。",
-    "original": "./art/pink-mermaid-original.jpg",
-    "clean": "./art/pink-mermaid-clean.png"
+    "original": "./media/f0c9fb81806b56ad47c963c6764ec2e559315a7ed9f86ed7c400444292a31e54.jpg",
+    "clean": "./media/54c95edc3e6d0f79ef713b00331b7c5a18e73ca50b44f04fbf96f3345af05d37.png",
+    "video": null,
+    "originalRotation": 90
   },
   {
     "id": "rainbow-mermaid",
     "title": "彩虹星星美人鱼",
     "date": "",
     "notes": "彩色的笔触，加上星星、花朵和蝴蝶结。",
-    "original": "./art/rainbow-mermaid-original.jpg",
-    "clean": "./art/rainbow-mermaid-clean.png"
+    "original": "./media/34a1d17d4fc786f2247802e143c6458c3e54829b4a88c44767f3afe92da28a77.jpg",
+    "clean": "./media/b82756a11a5bfed8c5709ddc38afd2926829d1f9e1bc4a5379fe4acd33662a5e.png",
+    "video": null,
+    "originalRotation": 0
   },
   {
     "id": "dog",
     "title": "长耳朵小狗",
     "date": "",
     "notes": "一只长耳朵、翘尾巴的小狗。",
-    "original": "./art/dog-original.png",
-    "clean": "./art/dog-clean.png"
+    "original": "./media/f294035e37ab2955b15915a0e90516d99ec184121ab4091ecf43ef3e1f1968fa.png",
+    "clean": "./media/07a6af7dd51835e4385840c8e69189cb1ac7089373565b2da63de78c112302fb.png",
+    "video": null,
+    "originalRotation": 0
   },
   {
     "id": "mermaid",
     "title": "花朵美人鱼",
     "date": "",
     "notes": "花朵、皇冠，还有一条弯弯的鱼尾巴。",
-    "original": "./art/mermaid-original.png",
-    "clean": "./art/mermaid-clean-v2.png"
+    "original": "./media/f27569640ae9ad1e372209996f10acf97e33dcf5cd7e290977d1c9191237385c.png",
+    "clean": "./media/f0dbb4e54fd2bff9300839325985194b43b026076eb463f1fb22478f7509747d.png",
+    "video": "./media/43493369f05bbedbef43aac87cd7f042a33aab568798f6480665c697d53c1cea.mp4",
+    "originalRotation": 0
   }
 ]

@@ -1,5 +1,35 @@
 [
   {
+    "id": "17089bb8-a426-4d46-955e-f91bb2e67163",
+    "title": "橙色海底世界",
+    "date": "",
+    "notes": "",
+    "original": "./media/cb3c99bdd89dc5e825eba56653d1e27eb9bd298e8059a170455471aed16c1a3c.jpg",
+    "clean": "./media/f9199ab5de7d58de55d38e9b03da64fa019fb64ec760f06a3cca63e9a9cc23d8.png",
+    "video": null,
+    "originalRotation": 0
+  },
+  {
+    "id": "cceee490-4b6d-4d8d-b749-f1beea3e46eb",
+    "title": "彩色表情派对",
+    "date": "",
+    "notes": "",
+    "original": "./media/b31264e239702e9a0d9826ed495cb3d806163ee944021fd6dd73020521cf06b2.jpg",
+    "clean": "./media/8e2abf5bfbbac7330dc187f9184fc9c74c286bd3f7491775410eb6443347210d.png",
+    "video": null,
+    "originalRotation": 0
+  },
+  {
+    "id": "76d6464f-bdef-4111-ac6d-6f9ffe5d6538",
+    "title": "美人鱼的彩虹小屋",
+    "date": "",
+    "notes": "",
+    "original": "./media/752e64a787749ebda962ea2c9c015a5ad095a97e1e6ea4c9cdd3e293ee7bb003.jpg",
+    "clean": "./media/fb869a0487b0989b023afcc3e5b96b5570c52884bef6412dd273f54ef4e75b53.png",
+    "video": null,
+    "originalRotation": 0
+  },
+  {
     "id": "9574dfc0-08b3-428b-8647-693f9f24ca03",
     "title": "长长的小幽灵（白底电子版）",
     "date": "",

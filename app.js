@@ -10,6 +10,10 @@ function setRotation(frame,rotation=0) {
   frame.classList.toggle('rotate-quarter',rotation===90||rotation===270);
   frame.style.setProperty('--original-rotation',rotation+'deg');
 }
+function uploadDate(item) {
+  const date=new Date(item.createdAt||'');
+  return Number.isNaN(date.getTime())?'上传日期未记录':'上传于 '+new Intl.DateTimeFormat('sv-SE').format(date);
+}
 function render() {
   $('#count').textContent=artworks.length;
   $('#gallery').replaceChildren();
@@ -30,7 +34,7 @@ function render() {
       const label=document.createElement('span');label.className='version-label';label.textContent=kind==='video'?'▶ 视频版':kind==='clean'?'白底电子版':'原始画作';
       frame.append(media,label);mat.append(frame);
     }
-    const meta=document.createElement('div');meta.className='art-meta';const title=document.createElement('h3');title.textContent=item.title;const date=document.createElement('span');date.textContent=item.date||'日期待记录';meta.append(title,date);
+    const meta=document.createElement('div');meta.className='art-meta';const title=document.createElement('h3');title.textContent=item.title;const date=document.createElement('span');date.className='art-dates';date.textContent=uploadDate(item)+(item.date?'\n创作于 '+item.date:'');meta.append(title,date);
     const note=document.createElement('p');note.className='art-note';note.textContent=item.notes||'每一笔，都只有这一次。';
     card.append(mat,meta,note);card.onclick=()=>openDetail(item.id);$('#gallery').append(card);
   }
@@ -59,7 +63,7 @@ function updateDetail(next=detailMode) {
   const video=$('#detail-video');$('#version-video').hidden=!selected.video;video.hidden=!selected.video;$('#video-error').hidden=true;
   if(selected.video){if(video.getAttribute('src')!==selected.video)video.src=selected.video;}
   else{video.pause();video.removeAttribute('src');video.load();}
-  $('#detail-title').textContent=selected.title;$('#detail-date').textContent=selected.date?'创作于 '+selected.date:'创作日期尚未记录';$('#detail-notes').textContent=selected.notes||'';
+  $('#detail-title').textContent=selected.title;$('#detail-date').textContent=uploadDate(selected)+(selected.date?'\n创作于 '+selected.date:'');$('#detail-notes').textContent=selected.notes||'';
   $('#detail-state').textContent=isVideo?'可以直接播放，或下载到设备。':detailMode==='clean'&&selected.clean?'背景清理版本 · 原图已保留，可切换对照。':'保留最初的笔触，也保留创作的样子。';
   for(const key of ['clean','original','video']) {const button=$('#show-'+key);button.hidden=!selected[key];button.classList.toggle('active',detailMode===key);button.setAttribute('aria-pressed',detailMode===key);}
   $('#download').href=source;$('#download').download=selected.title;

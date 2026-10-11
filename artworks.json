@@ -1,5 +1,45 @@
 [
   {
+    "id": "b9aba4db-b3a2-432e-b7af-139a3b2b441a",
+    "title": "蓝色小猫",
+    "date": "",
+    "notes": "",
+    "original": "./media/b29fefcc4e174d1cd7f8e08086b5baa2e176c864165ec254ab487ba3f71a2d1e.jpg",
+    "clean": null,
+    "video": null,
+    "originalRotation": 90
+  },
+  {
+    "id": "378516d5-ec9f-4bb8-ae3f-2f04d500f4fb",
+    "title": "三个剪纸好朋友",
+    "date": "",
+    "notes": "",
+    "original": "./media/75b0b6766a13283b381d7cb486e5cf97974f30ff3b5ac661ee9441913a160dcf.jpg",
+    "clean": null,
+    "video": null,
+    "originalRotation": 0
+  },
+  {
+    "id": "286394e8-c4b1-4cd6-9707-1ba980d2942c",
+    "title": "粉色美人鱼与绿城堡",
+    "date": "",
+    "notes": "",
+    "original": "./media/3b9acab29a568f6f5345c8f82e46cf4780e7bd615b9b3dad8ba993f0eb797282.jpg",
+    "clean": null,
+    "video": null,
+    "originalRotation": 270
+  },
+  {
+    "id": "be233a74-91f2-4cc3-af66-4a589481f877",
+    "title": "一起去学校",
+    "date": "",
+    "notes": "",
+    "original": "./media/6025fd8b0cf853337e321a655ed9fe51719ab24c4adb6b3bf5d9be31a4452ddb.jpg",
+    "clean": null,
+    "video": null,
+    "originalRotation": 90
+  },
+  {
     "id": "d71cad89-f1af-40d7-9741-bb736aaf903c",
     "title": "公主、小狗与城堡",
     "date": "",
@@ -7,7 +47,7 @@
     "original": "./media/26ba3c2d47e44560a8c35abc9dc5725950f7a830a49d55f864ee6f2b7cee1aa7.jpg",
     "clean": null,
     "video": null,
-    "originalRotation": 0
+    "originalRotation": 180
   },
   {
     "id": "82931668-73a0-4e14-bb09-4865397752ac",

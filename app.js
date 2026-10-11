@@ -5,6 +5,11 @@ const publicBackend=window.GALLERY_PUBLIC_BACKEND;
 let artworks=[], mode='all',selected=null,editing=null,canEdit=false,busy=false,detailMode='clean',familyId=null,canDelete=false,loadVersion=0;
 const artworkApi=()=>'/api/families/'+familyId+'/artworks';
 async function api(url,options) { const r=await fetch(url,options); const body=await r.json(); if(!r.ok) throw new Error(body.error||'操作失败，请重试。');return body; }
+function setRotation(frame,rotation=0) {
+  frame.classList.toggle('rotate-original',!!rotation);
+  frame.classList.toggle('rotate-quarter',rotation===90||rotation===270);
+  frame.style.setProperty('--original-rotation',rotation+'deg');
+}
 function render() {
   $('#count').textContent=artworks.length;
   $('#gallery').replaceChildren();
@@ -17,7 +22,7 @@ function render() {
     mat.classList.add('combined-preview');if(versions.includes('video'))mat.classList.add('has-video');
     mat.dataset.count=versions.length;
     for(const kind of versions){
-      const frame=document.createElement('div');frame.className='preview-version '+kind;if(kind==='original'&&item.originalRotation===90)frame.classList.add('rotate-original');
+      const frame=document.createElement('div');frame.className='preview-version '+kind;if(kind==='original')setRotation(frame,item.originalRotation);
       const media=document.createElement(kind==='video'?'video':'img');
       media.src=item[kind]+(kind==='video'?'#t=0.1':'');
       if(kind==='video'){media.preload='metadata';media.muted=true;media.playsInline=true;media.setAttribute('aria-label',item.title+' 视频');}
@@ -46,7 +51,7 @@ function updateDetail(next=detailMode) {
   const source=isVideo?selected.video:detailMode==='clean'&&selected.clean?selected.clean:selected.original;
   const area=$('#detail .detail-image');area.classList.toggle('has-video',!!selected.video);area.dataset.count=['video','clean','original'].filter(kind=>selected[kind]).length;
   for(const kind of ['clean','original']){
-    const image=$(kind==='clean'?'#detail-img':'#original-img');$('#version-'+kind).hidden=!selected[kind];image.parentElement.classList.toggle('rotate-original',kind==='original'&&selected.originalRotation===90);
+    const image=$(kind==='clean'?'#detail-img':'#original-img');$('#version-'+kind).hidden=!selected[kind];setRotation(image.parentElement,kind==='original'?selected.originalRotation:0);
     image.onload=null;image.onerror=null;image.style.visibility='hidden';
     if(selected[kind]){image.onload=()=>{image.style.visibility='visible';};image.onerror=()=>{image.style.visibility='visible';image.alt='图片加载失败，请刷新重试。';};image.src=selected[kind];image.alt=selected.title+' '+(kind==='clean'?'电子版':'原图');if(image.complete&&image.naturalWidth)image.onload();}
     else image.removeAttribute('src');
@@ -70,7 +75,7 @@ function openDetail(id) {const item=artworks.find(x=>x.id===id);if(!item)throw n
 function openEditor(item=null) {
   if(!canEdit||busy)return;editing=item;$('#art-form').reset();$('#form-error').textContent='';$('#upload-progress').hidden=true;
   $('#editor-title').textContent=item?'修改名称与资料':'上传图片或视频';
-  const f=$('#art-form').elements;f.title.value=item?.title||'';f.date.value=item?.date||'';f.notes.value=item?.notes||'';
+  const f=$('#art-form').elements;f.title.value=item?.title||'';f.date.value=item?.date||'';f.notes.value=item?.notes||'';f.originalRotation.value=String(item?.originalRotation||0);
   $('#file-label').hidden=!!item;f.file.required=!item;$('#metadata-fields').hidden=!item;$('#upload-hint').hidden=!!item;$('#editor').showModal();
 }
 function rawUpload(file,title,item,onProgress,kind='video') {
@@ -96,7 +101,7 @@ $('#add').onclick=()=>openEditor();$('#edit').onclick=()=>openEditor(selected);
 $('#art-form').elements.file.onchange=()=>{const f=$('#art-form').elements;if(!f.title.value&&f.file.files[0])f.title.value=f.file.files[0].name.replace(/\.[^.]+$/,'').slice(0,100);};
 $('#art-form').onsubmit=async e=>{
   e.preventDefault();if(busy)return;busy=true;$('#save').disabled=true;$('#save').textContent='正在保存…';$('#form-error').textContent='';
-  try {const f=e.currentTarget.elements;let item;if(editing)item=await api(artworkApi()+'/'+editing.id,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({title:f.title.value,notes:f.notes.value,date:f.date.value,revision:editing.revision})});else {$('#upload-progress').hidden=false;$('#upload-progress').value=0;item=await rawUpload(f.file.files[0],f.title.value,null,n=>{$('#upload-progress').value=n;$('#save').textContent=n===100?'上传完成，正在保存…':'上传中 '+n+'%';});}merge(item);$('#editor').close();}
+  try {const f=e.currentTarget.elements;let item;if(editing)item=await api(artworkApi()+'/'+editing.id,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({title:f.title.value,notes:f.notes.value,date:f.date.value,revision:editing.revision,originalRotation:Number(f.originalRotation.value)})});else {$('#upload-progress').hidden=false;$('#upload-progress').value=0;item=await rawUpload(f.file.files[0],f.title.value,null,n=>{$('#upload-progress').value=n;$('#save').textContent=n===100?'上传完成，正在保存…':'上传中 '+n+'%';});}merge(item);$('#editor').close();}
   catch(error){$('#form-error').textContent=error.message;}
   finally{busy=false;$('#save').disabled=false;$('#save').textContent='保存作品';}
 };
